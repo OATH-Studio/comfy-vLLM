@@ -22,17 +22,11 @@ https://www.theoath.studio/projects/comfy-vllm-node
 cd ComfyUI/custom_nodes
 git clone https://github.com/OATH-Studio/comfy-vLLM
 ```
-
-2. Install  (handled on comfyui restart):
-```bash
-pip install requests
-```
-
-3. Restart ComfyUI.
+2. Restart ComfyUI.
 
 ## Setup
 
-Start your vLLM server before running ComfyUI. The node will automatically
+Start your local vLLM server. The node will automatically
 detect whichever model is currently loaded no need to specify it in the node.
 
 Example launch:
