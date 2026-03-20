@@ -20,10 +20,10 @@ https://www.theoath.studio/projects/comfy-vllm-node
 1. Clone or copy this folder into your `ComfyUI/custom_nodes/` directory:
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/yourname/vllm_prompt_node
+git clone https://github.com/OATH-Studio/comfy-vLLM
 ```
 
-2. Install dependencies:
+2. Install  (handled on comfyui restart):
 ```bash
 pip install requests
 ```
@@ -33,7 +33,7 @@ pip install requests
 ## Setup
 
 Start your vLLM server before running ComfyUI. The node will automatically
-detect whichever model is currently loaded — no need to specify it in the node.
+detect whichever model is currently loaded no need to specify it in the node.
 
 Example launch:
 ```bash
@@ -44,14 +44,14 @@ vllm serve ./models/Qwen2.5-3B \
 ```
 
 > **Note:** The node queries `/v1/models` on each generation and uses the first
-> model returned. If you change models, just restart your vLLM server —
+> model returned. If you change models, just restart your vLLM server
 > the node picks it up automatically.
 
 ## Node Inputs
 
 | Input | Type | Default | Description |
 |---|---|---|---|
-| `prompt` | STRING | — | Generation instruction. Supports `{wild\|card}` syntax. |
+| `prompt` | STRING | | Generation instruction. Supports `{wild\|card}` syntax. |
 | `prefix` | STRING | `masterpiece, best quality, highres` | Fixed tags prepended to the output. **Not sent to the model.** |
 | `host` | STRING | `localhost` | vLLM server host. |
 | `port` | INT | `8765` | vLLM server port. |
